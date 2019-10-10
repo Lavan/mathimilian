@@ -13,18 +13,25 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { ResultsComponent } from './results/results.component';
 import { GameComponent } from './game/game.component';
+import { ProblemLengthComponent } from './problem-length/problem-length.component';
+import {MatInputModule} from "@angular/material/input";
+import {MatRadioModule} from "@angular/material/radio";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
-  declarations: [AppComponent, TimesComponent, ProblemSelectorComponent, ResultsComponent, GameComponent],
+  declarations: [AppComponent, TimesComponent, ProblemSelectorComponent, ResultsComponent, GameComponent, ProblemLengthComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
+    RouterModule.forRoot([], {initialNavigation: 'enabled'}),
     MatButtonModule,
     MatGridListModule,
     MatButtonToggleModule,
+    MatRadioModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [TimesService, ResultsService],
   bootstrap: [AppComponent]

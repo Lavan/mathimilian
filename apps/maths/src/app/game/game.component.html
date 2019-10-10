@@ -1,7 +1,8 @@
-<maths-problem-selector></maths-problem-selector>
 <div *ngIf="running">
-  <maths-times></maths-times>
+  <maths-times [timeType]="timeType" [numProblems]="numProblems" [totalTime]="totalTime"></maths-times>
 </div>
 <div *ngIf="!running">
+  <maths-problem-selector></maths-problem-selector>
+  <maths-problem-length (timeType)="timeType = $event" (numProblems)="numProblems = $event" (totalTime)="totalTime = $event"></maths-problem-length>
   <button mat-flat-button color="primary" (click)="startGame()" [disabled]="!(timesService.anySelectedTables$ | async)">Start</button>
 </div>

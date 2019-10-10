@@ -1,0 +1,23 @@
+<mat-radio-group [(ngModel)]="timeType" aria-label="Select type of time limit">
+  <mat-radio-button value="1">Time per problem</mat-radio-button>
+  <mat-radio-button value="2">Total time</mat-radio-button>
+</mat-radio-group>
+
+
+<div [ngSwitch]="timeType">
+  <div *ngSwitchCase="1">
+    <form fxLayout="column">
+      <mat-form-field>
+        <input matInput [(ngModel)]="numProblems" placeholder="Number of problems">
+      </mat-form-field>
+    </form>
+  </div>
+  <div *ngSwitchCase="2">
+    <form fxLayout="column">
+      <mat-form-field>
+        <input matInput [(ngModel)]="totalTime" placeholder="Time per problem">
+      </mat-form-field>
+    </form>
+  </div>
+</div>
+
