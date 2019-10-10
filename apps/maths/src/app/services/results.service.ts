@@ -8,6 +8,9 @@ export class ResultsService {
   private _correct: number;
   private _answers: number;
   private _startTime: number;
+  private timeType: string;
+  private numProblems: string;
+  private totalTime: string;
 
   public get correct(): number {
     return this._correct;
@@ -37,5 +40,17 @@ export class ResultsService {
 
   increaseAnswers() {
     ++this._answers;
+  }
+
+  setTimeType(timeType: string) {
+    this.timeType = timeType;
+  }
+
+  setNumProblems(numProblems: string) {
+    this.numProblems = numProblems;
+  }
+
+  setTotalTime(totalTime: string) {
+    this.totalTime = totalTime;
   }
 }
