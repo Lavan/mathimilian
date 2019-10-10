@@ -1,0 +1,19 @@
+<!--
+<div fxLayout="row">
+  <mat-button-toggle *ngFor="let table of tables; index as idx" (click)="selectTable(idx)">{{table}}</mat-button-toggle>
+</div>
+-->
+<!--
+<mat-grid-list cols="12" rowHeight="4em" gutterSize="2px">
+  <mat-grid-tile *ngFor="let table of tables; index as idx">
+    <mat-button-toggle color="primary" (click)="selectTable(idx)">{{table}}</mat-button-toggle>
+  </mat-grid-tile>
+</mat-grid-list>
+-->
+<mat-grid-list cols="6" rowHeight="4em" gutterSize="2px">
+  <mat-grid-tile *ngFor="let table of tables; index as idx">
+    <mat-button-toggle name="B{{table}}" class="tableButton"
+                       [value]="timesService.tableToggles[idx]"
+    (click)="selectTable(idx)">{{table}}</mat-button-toggle>
+  </mat-grid-tile>
+</mat-grid-list>

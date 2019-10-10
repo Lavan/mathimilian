@@ -1,0 +1,6 @@
+<h1>{{question.question}}</h1>
+<mat-grid-list cols="2" rowHeight="4em" gutterSize="10px">
+  <mat-grid-tile *ngFor="let ans of question.answers; index as idx">
+    <button mat-flat-button color="primary" (click)="answer(idx)" class="questionButton">{{ans}}</button>
+  </mat-grid-tile>
+</mat-grid-list>
